@@ -185,5 +185,4 @@ class Hijri
         $time = mktime($hour, $minute, $second, $day, $month, $year);
         return strtotime($time);
     }
-
 }
