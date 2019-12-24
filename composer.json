@@ -1,0 +1,36 @@
+{
+  "name": "alkoumi/laravel-hijri-date",
+  "description": "Laravel package to Convert laravel date to our Amazing 💝 Hjri date {ummul qura and vice versa} . to look like [ الخميس ، ٢٢ ربيع الآخر ، ١٤٤١ - ٠٧:٤٩ مساءً]",
+  "keywords": [
+    "hjri",
+    "date",
+    "hijri-date",
+    "hijri-calendar",
+    "ummul-qura-calendar",
+    "ummul-qura",
+    "hijri-date",
+    "laravel-hijri-date"
+  ],
+  "homepage": "https://be.net/komy",
+  "license": "MIT",
+  "authors": [
+		{
+		"name": "Mohammed Alkoumi",
+		"email": "komy66@gmail.com"
+		}
+	],
+  "autoload": {
+      "psr-4": {
+          "Alkoumi\\LaravelHijriDate\\": "src/"
+      }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Alkoumi\\LaravelHijriDate\\LaravelHijriDateServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
