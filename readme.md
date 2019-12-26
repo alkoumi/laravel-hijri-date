@@ -1,6 +1,11 @@
 # Laravel Hijri Date `Ummul Qura` Calendar
 #  تحويل التواريخ من و إلى التاريخ الهجري حسب تقويم أم القرى 
 
+[![License](https://poser.pugx.org/alkoumi/laravel-hijri-date/license)](https://packagist.org/packages/alkoumi/laravel-hijri-date)
+[![Total Downloads](https://poser.pugx.org/alkoumi/laravel-hijri-date/downloads)](https://packagist.org/packages/alkoumi/laravel-hijri-date)
+[![StyleCI](https://github.styleci.io/repos/229978322/shield?branch=master)](https://github.styleci.io/repos/229978322)
+
+
 Laravel package to Convert laravel date to our Amazing 💝 Hjri date {ummul qura and vice versa} . to look like [ الخميس ، ٢٢ ربيع الآخر ، ١٤٤١ - ٠٧:٤٩ مساءً]
 ## Installation Up to Laravel 6
 
