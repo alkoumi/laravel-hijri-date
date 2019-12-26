@@ -14,7 +14,7 @@ class LaravelHijriDateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        AliasLoader::getInstance()->alias("hijri", Hijri::class);
+        AliasLoader::getInstance()->alias('hijri', Hijri::class);
     }
 
     /**
