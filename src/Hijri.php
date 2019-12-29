@@ -80,13 +80,15 @@
                 $a = self::$a[$lang][$a];
                 $A = self::$A[$lang][$A];
             }
+            $Y = $Y.' هـ ';
             $r = "$D, $j $M $Y $H:$i:$s $O";
             $davars = array("d", "D", "j", "l", "S", "F", "m", "M", "n", "t", "L", "o", "Y", "y", "a", "A", "r");
             $myvars = array($d, "¢", $j, "£", "ç", "¥", $m, "©", $n, $t, $L, $Y, $Y, $y, "ï", "â", "®");
+            //dd($myvars);
             $format = str_replace($davars, $myvars, $format);
             $date = date($format, $timestamp);
             $date = str_replace(array("¢", "£", "ç", "¥", "©", "ï", "â", "®"), array($D, $l, $S, $F, $M, $a, $A, $r), $date);
-            return (new self)->TransNumbers($date) . "هـ";
+            return (new self)->TransNumbers($date);
         }
 
         public static function DateFullFormat($timestamp = 0, $hijri = 1)
