@@ -31,7 +31,7 @@ You can simply get Ummul qura Hijri date directly in Short Format
 
     $date = Carbon::now()->addMonth();
     Hijri::DateShortFormat($date); // RETURN Hijri Date of [$date] in Short Format
-    // RESULT { 1441-04-27 }
+    // RESULT {  ١٤٤١/٤/١٥هـ  }
 ```
 
 ## Hijri Date `Ummul Qura` Calendar `[Medium Format]`
@@ -43,7 +43,7 @@ You can simply get Ummul qura Hijri date directly in Medium Format
 
     $date = Carbon::now()->addMonth();
     Hijri::DateMediumFormat($date); // RETURN Hijri Date of [$date] in Medium Format
-    // RESULT { الثلاثاء ، 27 ربيع الآخر ، 1441 }
+    // RESULT { الأحد ، ٣ جمادى الأول ، ١٤٤١ هـ  }
 ```
 
 ## Hijri Date `Ummul Qura` Calendar `[Full Format]`
@@ -55,7 +55,7 @@ You can simply get Ummul qura Hijri date directly in Full Format
 
     $date = Carbon::now()->addMonth();
     Hijri::DateFullFormat($date); // RETURN Hijri Date of [$date] in Full Format
-    // RESULT { الثلاثاء ، 27 ربيع الآخر ، 1441 - 07:20:39 مساءً }
+    // RESULT { الأحد ، ٣ جمادى الأول ، ١٤٤١ هـ - ١٠:٣٣:٥٨ صباحاً  }
 ```
 
 ## Hijri Date `Ummul Qura` Calendar `[Your Custom Format]`
