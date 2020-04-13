@@ -14,7 +14,7 @@ class Hijri
     private static $M = ['ar' => [1 => 'كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول']];
     private static $a = ['ar' => ['am' => 'ص', 'pm' => 'م']];
     private static $A = ['ar' => ['AM' => 'صباحاً', 'PM' => 'مساءً']];
-    
+
     /**
      * @set If other language is to be used switch from here string language "ar" or "en".
      * @desc   setLang will change the way date is translated
@@ -25,7 +25,7 @@ class Hijri
     {
         self::$lang = $lang;
     }
-    
+
     /**
      * @param string format     date format (see http://php.net/manual/en/function.date.php)
      *         Integer timestamp   time measured in the number of seconds since
@@ -40,7 +40,7 @@ class Hijri
      *                  integer timestamp or the current time if no timestamp is given. In other words, timestamp
      *                  is optional and defaults to the value of time(), also hijri can be set to 0 to get Greg date.
      */
-    public static function Date($format, $digits = 'en', $timestamp = 0,  $hijri = 1)
+    public static function Date($format, $digits = 'en', $timestamp = 0, $hijri = 1)
     {
         $lang = static::$lang;
         //if ($timestamp === 0) $timestamp = time();
@@ -90,36 +90,34 @@ class Hijri
         $format = str_replace($davars, $myvars, $format);
         $date = date($format, $timestamp);
         $date = str_replace(['¢', '£', 'ç', '¥', '©', 'ï', 'â', '®'], [$D, $l, $S, $F, $M, $a, $A, $r], $date);
-        if ($digits == 'ar')
-        {
+        if ($digits == 'ar') {
             return (new self())->TransNumbers($date);
-        }else
-        {
+        } else {
             return $date;
         }
     }
-    
+
     public static function DateFullFormat($digits = 'en', $timestamp = 0, $hijri = 1)
     {
         $format = 'l ، j F ، Y - h:i:s A';
-        
+
         return self::Date($format, $digits, $timestamp, $hijri);
     }
-    
+
     public static function DateShortFormat($digits = 'en', $timestamp = 0, $hijri = 1)
     {
         $format = 'Y-m-j';
-        
+
         return self::Date($format, $digits, $timestamp, $hijri);
     }
-    
-    public static function DateMediumFormat($digits = 'en',$timestamp = 0, $hijri = 1)
+
+    public static function DateMediumFormat($digits = 'en', $timestamp = 0, $hijri = 1)
     {
         $format = 'l ، j F ، Y';
-        
+
         return self::Date($format, $digits, $timestamp, $hijri);
     }
-    
+
     /**
      * @param int $day
      * @param int $month
@@ -149,14 +147,14 @@ class Hijri
         //dd($id);
         return $id;
     }
-    
+
     public static function DateFromGregorianDMY($day = 20, $month = 02, $year = 2030)
     {
         $dateArray = (new self())->setFromGregorianDMY($day, $month, $year);
-        
+
         return (new self())->TransNumbers($dateArray['year'].'/'.$dateArray['month'].'/'.$dateArray['day']).'هـ';
     }
-    
+
     /**
      * @param int $day
      * @param int $month
@@ -178,17 +176,17 @@ class Hijri
         list($g['month'], $g['day'], $g['year'], $g['ln'], $g['ml']) = explode('/', jdtogregorian($jd)."/$iln/$ml");
         $g['month'] = intval($g['month']);
         $g['day'] = intval($g['day']);
-        
+
         return $g;
     }
-    
+
     public static function DateToGregorianFromDMY($day = 20, $month = 02, $year = 1447)
     {
         $dateArray = (new self())->setToGregorianFromDMY($day, $month, $year);
-        
+
         return $dateArray['year'].'/'.$dateArray['month'].'/'.$dateArray['day'];
     }
-    
+
     /**
      * @param int $hour
      * @param int $minute
@@ -206,19 +204,19 @@ class Hijri
         extract((array) (new static())->DateToGregorianFromDMY($day, $month, $year));
         //return time();
         $time = mktime($hour, $minute, $second, $day, $month, $year);
-        
+
         return strtotime($time);
     }
-    
+
     protected function TransNumbers($value)
     {
         if (is_string($value)) {
             $arabic_eastern = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
             $arabic_western = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-            
+
             return str_replace($arabic_western, $arabic_eastern, $value);
         }
-        
+
         return $value;
     }
 }
