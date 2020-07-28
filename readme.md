@@ -7,7 +7,7 @@
 
 
 Laravel package to Convert laravel date to our Amazing 💝 Hjri date {ummul qura and vice versa} . to look like [ الخميس ، ٢٢ ربيع الآخر ، ١٤٤١ - ٠٧:٤٩ مساءً]
-## Installation Up to Laravel 6
+## Installation for all Laravel Versions 🥳
 
 You can install the package via composer:
 
@@ -21,6 +21,9 @@ The service provider will automatically get registered. Or you may manually add 
     ];
 
 ## Usage
+![Tafqeet](imags/Hijri.png)
+
+
 
 ## Hijri Date `Ummul Qura` Calendar `[Short Format]`
 You can simply get Ummul qura Hijri date directly in Short Format 
