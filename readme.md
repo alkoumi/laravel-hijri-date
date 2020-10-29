@@ -1,7 +1,7 @@
 # Laravel Hijri Date `Ummul Qura` Calendar
 #  تحويل التواريخ من و إلى التاريخ الهجري حسب تقويم أم القرى 
 
-[![License](https://poser.pugx.org/alkoumi/laravel-hijri-date/license)](https://packagist.org/packages/alkoumi/laravel-hijri-date) [![Total Downloads](https://poser.pugx.org/alkoumi/laravel-hijri-date/downloads)](https://packagist.org/packages/alkoumi/laravel-hijri-date) [![StyleCI](https://github.styleci.io/repos/229978322/shield?branch=master)](https://github.styleci.io/repos/229978322) ![Packagist Version](https://img.shields.io/packagist/v/alkoumi/laravel-hijri-date) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alkoumi/laravel-hijri-date?color=red) ![Packagist Stars](https://img.shields.io/packagist/stars/alkoumi/laravel-hijri-date?color=yellow)
+[![License](https://poser.pugx.org/alkoumi/laravel-hijri-date/license)](https://packagist.org/packages/alkoumi/laravel-hijri-date) [![Total Downloads](https://poser.pugx.org/alkoumi/laravel-hijri-date/downloads)](https://packagist.org/packages/alkoumi/laravel-hijri-date) ![Packagist Version](https://img.shields.io/packagist/v/alkoumi/laravel-hijri-date) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alkoumi/laravel-hijri-date?color=red) ![Packagist Stars](https://img.shields.io/packagist/stars/alkoumi/laravel-hijri-date?color=yellow)
 
 
 Laravel package to Convert laravel date to our Amazing 💝 Hjri date {ummul qura and vice versa} . to look like [ الخميس ، ٢٢ ربيع الآخر ، ١٤٤١ - ٠٧:٤٩ مساءً]
@@ -86,6 +86,6 @@ You can simply get Ummul qura Hijri date directly in Your Custom Format
     Hijri::Date('l ، j F ، Y', $date); // RETURN Hijri Date of [$date] in Full Format in EN DIGITS
     Hijri::Date('l ، j F ، Y', 'ar', $date); // RETURN Hijri Date of [$date] in Full Format in AR DIGITS
 ```
-## Give Me Coffee `Ummul Qura` Calendar `[Your Custom Format]`
+#### Give Me 💗 Cup of ☕️ Coffee here https://patreon.com/mohammadelkoumi
 
 
