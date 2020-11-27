@@ -40,8 +40,9 @@ class Hijri
      *                  integer timestamp or the current time if no timestamp is given. In other words, timestamp
      *                  is optional and defaults to the value of time(), also hijri can be set to 0 to get Greg date.
      */
-    public static function Date($format, $digits = 'en', $timestamp = 0, $hijri = 1)
+    public static function Date($format, $timestamp = 0)
     {
+        $hijri = 1;
         $lang = static::$lang;
         //if ($timestamp === 0) $timestamp = time();
         if ($timestamp === 0) {
@@ -82,7 +83,7 @@ class Hijri
             $a = self::$a[$lang][$a];
             $A = self::$A[$lang][$A];
         }
-        $Y = $Y.' هـ ';
+        $Y = $Y;
         $r = "$D, $j $M $Y $H:$i:$s $O";
         $davars = ['d', 'D', 'j', 'l', 'S', 'F', 'm', 'M', 'n', 't', 'L', 'o', 'Y', 'y', 'a', 'A', 'r'];
         $myvars = [$d, '¢', $j, '£', 'ç', '¥', $m, '©', $n, $t, $L, $Y, $Y, $y, 'ï', 'â', '®'];
@@ -90,32 +91,54 @@ class Hijri
         $format = str_replace($davars, $myvars, $format);
         $date = date($format, $timestamp);
         $date = str_replace(['¢', '£', 'ç', '¥', '©', 'ï', 'â', '®'], [$D, $l, $S, $F, $M, $a, $A, $r], $date);
-        if ($digits == 'ar') {
-            return (new self())->TransNumbers($date);
-        } else {
-            return $date;
-        }
+        return $date;
     }
 
-    public static function DateFullFormat($digits = 'en', $timestamp = 0, $hijri = 1)
+    public static function DateIndicDigits($format, $timestamp = 0)
     {
-        $format = 'l ، j F ، Y - h:i:s A';
-
-        return self::Date($format, $digits, $timestamp, $hijri);
+        return (new self())->TransNumbers(self::Date($format, $timestamp));
     }
 
-    public static function DateShortFormat($digits = 'en', $timestamp = 0, $hijri = 1)
+    public static function ShortDate($timestamp = 0)
     {
-        $format = 'Y-m-j';
+        $format = 'Y/m/d';
 
-        return self::Date($format, $digits, $timestamp, $hijri);
+        return self::Date($format,$timestamp);
     }
 
-    public static function DateMediumFormat($digits = 'en', $timestamp = 0, $hijri = 1)
+    public static function ShortDateIndicDigits($timestamp = 0)
+    {
+        $format = 'Y/m/d';
+
+        return self::DateIndicDigits($format,$timestamp);
+    }
+
+    public static function MediumDate($timestamp = 0)
     {
         $format = 'l ، j F ، Y';
 
-        return self::Date($format, $digits, $timestamp, $hijri);
+        return self::Date($format,$timestamp);
+    }
+
+    public static function MediumDateIndicDigits($timestamp = 0)
+    {
+        $format = 'l ، j F ، Y';
+
+        return self::DateIndicDigits($format,$timestamp);
+    }
+
+    public static function FullDate($timestamp = 0)
+    {
+        $format = 'l ، j F ، Y - h:i:s A';
+
+        return self::Date($format, $timestamp);
+    }
+
+    public static function FullDateIndicDigits($timestamp = 0)
+    {
+        $format = 'l ، j F ، Y - h:i:s A';
+
+        return self::DateIndicDigits($format, $timestamp);
     }
 
     /**
